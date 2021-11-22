@@ -92,7 +92,7 @@ export default {
             width:100%;
             margin:0;
             padding:20px 40px;
-            background:rgba(0,0,0,.7);
+            background:rgba(0,0,0,.4);
             color:white;
             font-size:40px;
             font-weight:400;
@@ -222,8 +222,8 @@ export default {
                 height:100%;
                 object-fit:cover;
                 cursor:pointer;
-                border-left:1px solid rgba(255,255,255,.5);
-                border-top:1px solid rgba(255,255,255,.5);
+                // border-left:1px solid rgba(255,255,255,.5);
+                // border-top:1px solid rgba(255,255,255,.5);
                 border-radius:5px;
                 overflow: hidden;
             }
