@@ -10,7 +10,7 @@
               <div class="ribon">
                 <img :src="require('../assets/pic/ribon'+(Math.floor(Math.random()*4))+'.png')" alt="" />
               </div>
-              <div class="card" :style="{background:'rgb('+(Math.floor(Math.random()*255))+','+(Math.floor(Math.random()*255))+','+(Math.floor(Math.random()*255))+')'}">
+              <div class="card" :style="{background:'rgb(185,'+Math.floor(Math.random()*(230-185+1)+185)+','+Math.floor(Math.random()*(230-185+1)+185)+')'}">
                 <div class="textarea">
                   <p class="name">王小涵</p>
                   <p class="content">

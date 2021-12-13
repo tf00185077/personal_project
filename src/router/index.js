@@ -10,6 +10,7 @@ export default new Router({
     {path:'/read', component: r => require.ensure([], () => r(require('../pages/read.vue')), 'read')},
     {path:'/share', component: r => require.ensure([], () => r(require('../pages/share.vue')), 'share')},
     {path:'/message', component: r => require.ensure([], () => r(require('../pages/message.vue')), 'message')},
+    {path:'/event', component: r => require.ensure([], () => r(require('../pages/event.vue')), 'event')},
 
   ]
 })

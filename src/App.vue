@@ -7,7 +7,7 @@
         <div class="cube" id="front" @click="cube='red'" :class="{'check_cube':cube=='red'}"><router-link to="/"></router-link></div>
         <div class="cube" id="right" @click="cube='blue'" :class="{'check_cube':cube=='blue'}"><router-link to="/read"></router-link></div>
         <div class="cube" id="left" @click="cube='green'" :class="{'check_cube':cube=='green'}"><router-link to="/share"></router-link></div>
-        <div class="cube" id="back" @click="cube='pink'" :class="{'check_cube':cube=='pink'}"><router-link to="/"></router-link></div>
+        <div class="cube" id="back" @click="cube='pink'" :class="{'check_cube':cube=='pink'}"><router-link to="/event"></router-link></div>
         <div class="cube" id="top" @click="cube='yellow'" :class="{'check_cube':cube=='yellow'}"><router-link to="/"></router-link></div>
         <div class="cube" id="bottom" @click="cube='gray'" :class="{'check_cube':cube=='gray'}"><router-link to="/"></router-link></div>
       </div>

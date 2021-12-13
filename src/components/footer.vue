@@ -110,6 +110,7 @@ export default {
                         &:hover{
                             background:#CDF5AB;
                             color:#515151;
+                            text-decoration: underline;
                         }
                     }
                 }
