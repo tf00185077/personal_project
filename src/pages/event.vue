@@ -67,9 +67,9 @@ export default {
       test:[],
     };
   },
-  methods: {},
-  mounted(){
-    axios({
+  methods: {
+    callAPI(){
+      axios({
       url:"https://mocki.io/v1/2ac8e922-c9bd-4c0a-917b-413d535ec336",
       method:"GET",
       headers:{
@@ -84,6 +84,14 @@ export default {
     }).catch((err)=>{
       console.log(err)
     })
+    }
+  },
+  mounted(){
+    window.scrollTo(0, 0)
+    this.callAPI()
+  },
+  activated(){
+    window.scrollTo(0, 0)
   }
 };
 </script>
@@ -123,6 +131,7 @@ export default {
   }
 }
 #second_site{
+  box-shadow:8px 8px 10px rgba(0,0,0,.2);
   max-width:1200px;
   width:100%;
   margin:0 auto;
@@ -140,7 +149,7 @@ export default {
   }
   .three_event{
     display:grid;
-    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
     gap:20px;
   }
 }
@@ -158,11 +167,11 @@ export default {
   h1{
     position:relative;
     width:100%;
-    background:rgba(0,0,0,.5);
+    background:rgba(0,0,0,.8);
     color:white;
-    padding:5px 10px;
+    padding:15px 20px;
     margin:0;
-    font-size:35px;
+    font-size:24px;
     font-weight:400;
     cursor: pointer;
   }
@@ -177,6 +186,7 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   padding:20px;
+  box-shadow:8px 8px 10px rgba(0,0,0,.2);
   .up_site{
     display:flex;
     justify-content: space-between;
@@ -194,6 +204,11 @@ export default {
         display:flex;
         justify-content: center;
         align-items: center;
+        padding:10px;
+        box-shadow:3px 3px 5px rgba(0,0,0,.5);
+        border-top:1px solid white;
+        border-left:1px solid white;
+        border-radius: 5px;
       }
     }
     .right_site{
@@ -225,8 +240,7 @@ export default {
           font-weight:600;
         }
         &:active{
-                 box-shadow:inset 3px 3px 5px rgba(0,0,0,.4);
-
+          box-shadow:inset 3px 3px 5px rgba(0,0,0,.4);
         }
       }
   }
@@ -246,6 +260,7 @@ export default {
     margin:0;
     background: $sup_color;
     border-radius:5px;
+    box-shadow: 3px 3px 5px rgba(0,0,0,.4);
   }
   button{
     border:none;

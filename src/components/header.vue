@@ -6,7 +6,7 @@
         <li :class="{'color':color=='blue'}" @click="sendTitle('blue')"><router-link to="/read" >閱讀</router-link></li>
         <li :class="{'color':color=='green'}" @click="sendTitle('green')"><router-link to="/share" >分享</router-link></li>
         <li :class="{'color':color=='pink'}" @click="sendTitle('pink')"><router-link to="/event" >活動</router-link></li>
-        <li :class="{'color':color=='yellow'}" @click="sendTitle('yellow')"><router-link to="/" >書籤</router-link></li>
+        <li :class="{'color':color=='yellow'}" @click="sendTitle('yellow')"><router-link to="/bookmark" >書籤</router-link></li>
       </ul>
       <p class="assign">登入</p>
     </div>

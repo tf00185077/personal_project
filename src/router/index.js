@@ -11,6 +11,7 @@ export default new Router({
     {path:'/share', component: r => require.ensure([], () => r(require('../pages/share.vue')), 'share')},
     {path:'/message', component: r => require.ensure([], () => r(require('../pages/message.vue')), 'message')},
     {path:'/event', component: r => require.ensure([], () => r(require('../pages/event.vue')), 'event')},
+    {path:'/bookmark', component: r => require.ensure([], () => r(require('../pages/bookmark.vue')), 'bookmark')},
 
   ]
 })

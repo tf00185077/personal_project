@@ -123,9 +123,14 @@ export default {
     },
   },
   mounted() {
+    window.scrollTo(0, 0)
     console.log("Current Swiper instance object", this.swiper);
     // this.swiper.slideTo(5,2000, true)
   },
+  activated(){
+        window.scrollTo(0, 0)
+
+  }
 };
 </script>
 <style lang="scss" scoped>
