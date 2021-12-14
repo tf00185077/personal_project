@@ -1,8 +1,15 @@
 <template>
-  <div id="app">
+  <div id="app" :style="{background:bgColor}">
     <myHeader @changeColor="changeColor" :color="cube"></myHeader>
     <keep-alive> <router-view style="marginTop:0px;" /></keep-alive>
     <div id="camera">
+      <div id="changeBgColor">
+        <ul>
+          <li @click="bgColor='#9CB6C8'"></li>
+          <li @click="bgColor='#81BCE5'"></li>
+          <li @click="bgColor='#818EE5'"></li>
+        </ul>
+      </div>
       <div id="space" :class="{'gray_page':cube=='gray','yellow_page':cube=='yellow','red_page':cube=='red','green_page':cube=='green','pink_page':cube=='pink','blue_page':cube=='blue'}">
         <div class="cube" id="front" @click="cube='red'" :class="{'check_cube':cube=='red'}"><router-link to="/"></router-link></div>
         <div class="cube" id="right" @click="cube='blue'" :class="{'check_cube':cube=='blue'}"><router-link to="/read"></router-link></div>
@@ -28,6 +35,7 @@ export default {
   data(){
     return {
       cube:'red',
+      bgColor:"#9CB6C8",
     }
   },
   mounted(){
@@ -48,7 +56,7 @@ export default {
   box-sizing: border-box;
 }
 #app{
-  background:#9CB6C8;
+  
 }
 #camera{
   z-index:998;
@@ -57,6 +65,34 @@ export default {
   bottom:10px;
   perspective: 512px;
   perspective-origin: 50% 50%;
+  #changeBgColor{
+    position:absolute;
+    bottom:0;
+    right:0;
+    
+    ul{
+      display:flex;
+      gap:10px;
+      list-style: none;
+      li{
+        z-index:2;
+        width:20px;
+        height:20px;
+        border-radius:50%;
+        cursor: pointer;
+        border:2px solid white;
+      }
+      li:nth-child(1){
+        background: #9CB6C8;
+      }
+      li:nth-child(2){
+        background: #81BCE5;
+      }
+      li:nth-child(3){
+        background: #818EE5;
+      }
+    }
+  }
   #space.red_page{
     transform:rotateX(325deg) rotateY(150deg);
   }

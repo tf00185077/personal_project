@@ -49,7 +49,8 @@
               </div>
               <div class="card">
                 <div class="textarea">
-                  <p class="name" >{{name}}</p>
+                  <p class="name" v-show="changeInputType!=2">{{name}}</p>
+                  <p class="name" v-show="changeInputType==2">{{concatUserName}}</p>
                   <p class="content">{{text}}</p>
                 </div>
               </div>
@@ -79,7 +80,56 @@
             </div>
             <div class="write_area">
               <textarea name="" id="" cols="30" rows="10" placeholder="請填入你想寫上的話" v-model.lazy="text"></textarea>
-              <input type="text" placeholder="留名" v-model.lazy="name">
+              <div class="change_input_type">
+                <div class="input_outline">
+                  <label for="write">手寫</label>
+                  <input type="radio" name="changeInputType" id="write" value=0 v-model="changeInputType" />
+                </div>
+                <div class="input_outline">
+                  <label for="select" @click="nameToDefault">創意名</label>
+                  <input @click="nameToDefault" type="radio" name="changeInputType" id="select" value=1 v-model="changeInputType" />
+                </div>
+                <div class="input_outline">
+                  <label for="concat">組合名稱</label>
+                  <input type="radio" name="changeInputType" id="concat" value=2 v-model="changeInputType" />
+                </div>
+              </div>
+              <input type="text" placeholder="留名" v-model.lazy="name" v-show="changeInputType==0" id="input_name">
+              <select name="" id="select_name" v-show="changeInputType==1" v-model="name">
+                <option value="無敵鐵金剛">無敵鐵金剛</option>
+                <option value="憂鬱小生">憂鬱小生</option>
+                <option value="拳王阿里">拳王阿里</option>
+              </select>
+              <div id="concat_name" v-show="changeInputType==2">
+                <div class="input_outline">
+                  <label for="option1">創意的</label>
+                  <input type="checkbox" name="name_checkbox" id="option1" value="創意的" v-model="concatName" />
+                </div>
+                <div class="input_outline">
+                  <label for="option2">幽默的</label>
+                  <input type="checkbox" name="name_checkbox" id="option2" value="幽默的" v-model="concatName" />
+                </div>
+                <div class="input_outline">
+                  <label for="option3">憂鬱的</label>
+                  <input type="checkbox" name="name_checkbox" id="option3" value="憂鬱的" v-model="concatName" />
+                </div>
+                <div class="input_outline">
+                  <label for="option4">默默男子</label>
+                  <input type="checkbox" name="name_checkbox" id="option4" value="默默男子" v-model="concatName" />
+                </div>
+                <div class="input_outline">
+                  <label for="option5">默默女子</label>
+                  <input type="checkbox" name="name_checkbox" id="option5" value="默默女子" v-model="concatName" />
+                </div>
+                <div class="input_outline">
+                  <label for="option6">默默中子</label>
+                  <input type="checkbox" name="name_checkbox" id="option6" value="默默中子" v-model="concatName" />
+                </div>
+                <div class="input_outline">
+                  <label for="option7">默默電子</label>
+                  <input type="checkbox" name="name_checkbox" id="option7" value="默默電子" v-model="concatName" />
+                </div>
+              </div>
               <button @click="writeNewBookMark">掛上書籤</button>
             </div>
         </div>
@@ -89,6 +139,13 @@
 <script>
 export default {
   name: "message",
+  metaInfo:{
+    title:"Message",
+    meta:[
+      {name:"description",content:"留言板"},
+      {name:"description",content:"抒發小區"},
+    ]
+  },
   data() {
     return {
       changeColor:'#4D4392',
@@ -97,20 +154,43 @@ export default {
       text:'',
       newBookMark:[],
       newCardClass:[0,1],
+      changeInputType:0,
+      concatName:[],
     };
   },
   methods:{
     writeNewBookMark(){
+      let theName
+      if(this.changeInputType ==2){
+        theName = this.concatUserName
+      }else{
+        theName = this.name
+      }
       let bookMark = {
-        name:this.name,
+        name:theName,
         text:this.text,
         ribonNumber:this.changeRibon,
         color:this.changeColor
       };
       this.newBookMark.push(bookMark);
-      this.name='';
+      if(this.changeInputType ==1){
+        this.name='無敵鐵金剛';
+      }else{
+        this.name='';
+      }
+      this.concatName=[];
       this.text='';
       this.changeRibon=0;
+    },
+    nameToDefault(){
+      this.name="無敵鐵金剛"
+    }
+  },
+  computed:{
+    concatUserName(){
+      let LastName=""
+      this.concatName.map(name=>LastName += name)
+      return LastName
     }
   },
   mounted(){
@@ -624,6 +704,58 @@ section.total_message{
   }
   100% {
     transform: rotate(00deg);
+  }
+}
+.change_input_type{
+  display:flex;
+  margin-top:20px;
+  .input_outline{
+    flex:1;
+    display:flex;
+    align-items: center;
+    gap:10px;
+    label{
+      cursor: pointer;
+      color:white;
+    }
+    input{
+      cursor: pointer;
+      margin:0px;
+      width:20px;
+      height:20px;
+    }
+  }
+}
+#select_name{
+  width:180px;
+  border:none;
+  border-radius:5px;
+  margin-top:10px;
+  padding:0 5px;
+  height:30px;
+}
+#concat_name{
+  display:grid;
+  margin-top:30px;
+  grid-template-columns: repeat(auto-fit,minmax(90px,1fr));
+  align-items: center;
+  justify-content: space-between;
+  gap:5px 10px;
+  .input_outline{
+    flex:1;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    label{
+      cursor: pointer;
+      color:white;
+    }
+    input{
+      cursor: pointer;
+      margin:0px;
+      width:20px;
+      height:20px;
+    }
   }
 }
 </style>

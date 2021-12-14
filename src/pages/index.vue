@@ -90,6 +90,13 @@ export default {
   directives: {
     swiper: directive,
   },
+  metaInfo:{
+    title:"HOME",
+    meta: [
+      { name: 'description', content: '讀享首頁' },
+      { name: 'description', content: '讀享資訊頁' },
+    ]
+  },
   data() {
     return {
       swiperOptions: {
@@ -128,8 +135,7 @@ export default {
     // this.swiper.slideTo(5,2000, true)
   },
   activated(){
-        window.scrollTo(0, 0)
-
+    window.scrollTo(0, 0)
   }
 };
 </script>

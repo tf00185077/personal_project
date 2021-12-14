@@ -62,6 +62,13 @@
 import axios from 'axios'
 export default {
   name: "event",
+  metaInfo:{
+    title:"Event",
+    meta:[
+      {name:"description",content:"舉辦活動"},
+      {name:"description",content:"活動相關"},
+    ]
+  },
   data() {
     return {
       test:[],

@@ -47,6 +47,13 @@
 <script>
 export default {
   name: "share",
+  metaInfo:{
+    title:"Share",
+    meta:[
+      {name:"description",content:"讀享分享區"},
+      {name:"description",content:"留言頁面導覽"},
+    ]
+  },
   data() {
     return {
       backgroundImage: {

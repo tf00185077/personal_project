@@ -41,6 +41,13 @@
 <script>
 export default {
     name:"bookmark",
+    metaInfo:{
+    title:"Bookmark",
+    meta:[
+      {name:"description",content:"商品頁"},
+      {name:"description",content:"書籤販售"},
+    ]
+  },
     data(){
         return{
             bookmarks:[{

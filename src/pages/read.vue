@@ -50,6 +50,13 @@
 <script>
 export default {
     name:"read",
+    metaInfo:{
+    title:"Read",
+    meta:[
+      {name:"description",content:"讀享-關於閱讀"},
+      {name:"description",content:"關於讀書"},
+    ]
+  },
     data(){
         return {
             backgroundImage:{
