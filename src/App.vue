@@ -64,7 +64,7 @@ export default {
   perspective-origin: 50% 50%;
   #changeBgColor{
     position:absolute;
-    bottom:0;
+    bottom:-15px;
     right:0;
     
     ul{
@@ -73,8 +73,8 @@ export default {
       list-style: none;
       li{
         z-index:2;
-        width:20px;
-        height:20px;
+        width:50px;
+        height:50px;
         border-radius:50%;
         cursor: pointer;
         border:2px solid white;
@@ -117,6 +117,7 @@ export default {
     transform:rotateX(325deg) rotateY(0deg);
     transition:1s;
     position:relative;
+    top:-40px;
     .cube{
       width:100px;
       height:100px;
