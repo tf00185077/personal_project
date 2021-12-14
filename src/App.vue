@@ -55,9 +55,6 @@ export default {
 *{
   box-sizing: border-box;
 }
-#app{
-  
-}
 #camera{
   z-index:998;
   position:fixed;
@@ -159,6 +156,13 @@ export default {
         transform: rotateY(180deg) translateZ(-50px);
       }
     
+  }
+}
+@media screen and (max-width:500px) {
+  #camera{
+    transform:Scale(.5);
+    bottom:-50px;
+    right:-30px;
   }
 }
 </style>

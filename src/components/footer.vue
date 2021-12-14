@@ -118,4 +118,27 @@ export default {
         }
     }
 }
+@media screen and (max-width:900px) {
+    #outline .about .connect ul{
+        flex-direction: column;
+        gap:20px;
+        li{
+            width:100%;
+        }
+    }
+}
+@media screen and (max-width:600px) {
+    #outline{
+        flex-direction: column;
+        gap:30px;
+        #map{
+            overflow: hidden;
+            height:100%;
+            width:100%;
+        }
+        .about{
+            width:100%;
+        }
+    }
+}
 </style>

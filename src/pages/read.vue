@@ -39,8 +39,8 @@
 <div class="book">
     <ul>
         <li><router-link to=""><img src="../assets/pic/book1.jpg" alt=""></router-link></li>
-        <li><router-link to=""><img src="../assets/pic/book1.jpg" alt=""></router-link></li>
-        <li><router-link to=""><img src="../assets/pic/book1.jpg" alt=""></router-link></li>
+        <li><router-link to=""><img src="../assets/pic/book2.jpg" alt=""></router-link></li>
+        <li><router-link to=""><img src="../assets/pic/book3.jpg" alt=""></router-link></li>
         <li><router-link to=""><img src="../assets/pic/book1.jpg" alt=""></router-link></li>
     </ul>
 </div>
@@ -188,6 +188,7 @@ export default {
     .right_site{
         width:450px;
         height:450px;
+        align-self: center;
         img{
             width:100%;
             height:100%;
@@ -233,7 +234,8 @@ export default {
             img{
                 width:100%;
                 height:100%;
-                object-fit:cover;
+                display:inline-block;
+                object-fit:contain;
                 cursor:pointer;
                 // border-left:1px solid rgba(255,255,255,.5);
                 // border-top:1px solid rgba(255,255,255,.5);
@@ -241,6 +243,20 @@ export default {
                 overflow: hidden;
             }
         }
+    }
+}
+@media screen and (max-width:500px) {
+    #second_site{
+        flex-direction: column;
+        .right_site{
+            min-width:260px;
+            min-height:260px;
+            width:100%;
+            height:100%;
+        }
+    }
+    #third_site ul{
+        grid-template-columns: 1fr;
     }
 }
 </style>

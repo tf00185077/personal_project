@@ -758,4 +758,25 @@ section.total_message{
     }
   }
 }
+@media screen and (max-width:500px) {
+  #write_message{
+    flex-direction: column;
+  }
+  .middle_site .card_outline{
+    transform:scale(.7)
+  }
+  .right_site{
+    margin-left:0;
+  }
+  section.total_message .textarea_outline{
+    flex-direction: column;
+    padding:0;
+    p.descript{
+      margin-top:0;
+    }
+    .message{
+      margin:0;
+    }
+  }
+}
 </style>

@@ -365,4 +365,44 @@ export default {
     }
   }
 }
+@media screen and (max-width:500px) {
+  #third_site{
+    flex-direction: column;
+    align-items: center;
+    .left_site{
+      width:100%;
+      padding:5px;
+    }
+    .right_site{
+      width:100%;
+      ul{
+        flex-direction: row;
+        flex-wrap:wrap;
+        justify-content: flex-start;
+        align-items:center;
+        li{ 
+          flex:1;
+          border:1px dashed rgba(255,255,255,.4);
+          background: linear-gradient(180deg,rgba(171,245,186,.7) 100%);
+          background-size: 100% 0%;
+          background-repeat: no-repeat;
+          background-position: center;
+          transition: .5s;
+        }
+      }
+    }
+  }
+  #forth_site .outline{
+    flex-direction: column;
+    padding:10px;
+    .join_us{
+      transform:none;
+      width:100%;
+      margin:0 auto;
+    }
+    .descript{
+      width:100%;
+    }
+  }
+}
 </style>

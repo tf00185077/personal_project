@@ -288,4 +288,20 @@ export default {
     }
   }
 }
+@media screen and (max-width:730px) {
+  .join_event_outline{
+    flex-direction: column;
+    button{
+      width:100%;
+    }
+  }
+}
+@media screen and (max-width:500px) {
+  #third_site .up_site{
+    flex-direction: column;
+  }
+  #third_site .up_site .right_site{
+    margin:0;
+  }
+}
 </style>

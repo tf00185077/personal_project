@@ -98,6 +98,7 @@ export default {
   }
   .right_site {
     flex: 1;
+    min-width:180px;
     height: 400px;
     margin: 0;
     padding: 0;
@@ -345,6 +346,27 @@ div.card_outline {
     // left:50%;
     // top:-20px;
     transform: rotate(110deg) translateX(-50%);
+  }
+}
+@media screen and (max-width:798px) {
+  #second_site{
+    overflow: hidden;
+  }
+  #second_site div.showMessage{
+    flex-direction: column;
+    
+  }
+  #second_site div.showMessage div.message_outline{
+    flex-wrap:wrap;
+    gap:20px;
+  }
+}
+@media screen and (max-width:500px) {
+  #first_site .left_site{
+    display:none;
+  }
+  #second_site button{
+    align-self: center;
   }
 }
 </style>
