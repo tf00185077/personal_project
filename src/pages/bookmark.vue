@@ -392,16 +392,16 @@ p.total_prize{
 #shopping_cart{
     padding-top:50px;
     width:100%;
-    height:100vh;
+    height:100%;
     position:fixed;
     left:0;
     top:0;
     z-index:9999;
     background:rgba(255,255,255,.3);
     backdrop-filter: blur(5px);
-    transform:translateY(-100%);
+    // transform:translateY(-100%);
     transition:.5s;
-    display:flex;
+    display:none;
     flex-direction: column;
     img{
         position:absolute;
@@ -411,7 +411,8 @@ p.total_prize{
     }
 }
 #shopping_cart.open{
-    transform:translateY(0)
+    // transform:translateY(0)
+    display:flex;
 }
 #good_info{
     display:flex;

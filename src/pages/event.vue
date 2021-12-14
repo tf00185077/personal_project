@@ -53,7 +53,7 @@
         </div>
       </div>
       <div class="down_site">
-          <router-link to="/">查看所有活動</router-link>
+          <router-link to="">查看所有活動</router-link>
       </div>
     </section>
   </div>
@@ -99,6 +99,7 @@ export default {
   },
   activated(){
     window.scrollTo(0, 0)
+    this.$emit('changeColor',"pink")
   }
 };
 </script>

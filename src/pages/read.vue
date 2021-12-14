@@ -72,6 +72,7 @@ export default {
     },
     activated(){
     window.scrollTo(0, 0)
+    this.$emit('changeColor',"blue")
   }
 }
 </script>

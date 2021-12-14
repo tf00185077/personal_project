@@ -33,7 +33,7 @@
           </div>
         </div>
       </div>
-      <button><router-link to="">查看所有留言</router-link></button>
+      <button><router-link to="message">查看所有留言</router-link></button>
     </section>
     <hr>
     <section id="third_site">
@@ -74,6 +74,7 @@ export default {
   },
   activated(){
     window.scrollTo(0, 0)
+    this.$emit('changeColor',"green")
   }
 };
 </script>

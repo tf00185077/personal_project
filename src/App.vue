@@ -1,7 +1,7 @@
 <template>
   <div id="app" :style="{background:bgColor}">
     <myHeader @changeColor="changeColor" :color="cube"></myHeader>
-    <keep-alive> <router-view style="marginTop:0px;" /></keep-alive>
+    <keep-alive> <router-view style="marginTop:0px;" @changeColor="changeColor" /></keep-alive>
     <div id="camera">
       <div id="changeBgColor">
         <ul>

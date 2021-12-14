@@ -22,7 +22,7 @@
            沒有最適合的書<br>
             閱讀，是我們和自己的<br>
             對話</p>
-        <router-link to="/">閱讀</router-link>
+        <router-link to="/read">閱讀</router-link>
       </div>
       <div class="card second_card">
         <img src="../assets/pic/shared-folder.png"/>
@@ -30,7 +30,7 @@
 我們享受在其中<br>
 而且，我們知道<br>
 分享更是一種樂事</p>
-        <router-link to="/">分享</router-link>
+        <router-link to="/share">分享</router-link>
       </div>
       <div class="card third_card">
         <img src="../assets/pic/juggler.png"/>
@@ -38,7 +38,7 @@
 對話不只是說與聽<br>
 更是心靈上的交流<br>
 見面 三分情</p>
-        <router-link to="/">活動</router-link>
+        <router-link to="/event">活動</router-link>
       </div>
     </div>
   </div>
@@ -49,14 +49,14 @@
     </div>
     <div class="right_site">
     <ul>
-    <li><router-link to="/1">懸疑</router-link></li>
-    <li><router-link to="/2">驚悚</router-link></li>
-    <li><router-link to="/3">愛情</router-link></li>
-    <li><router-link to="/4">勵志</router-link></li>
-    <li><router-link to="/5">傳記</router-link></li>
-    <li><router-link to="/6">童話</router-link></li>
-    <li><router-link to="/7">知識</router-link></li>
-    <li><router-link to="/8">史實</router-link></li>
+    <li><router-link to="/">懸疑</router-link></li>
+    <li><router-link to="/">驚悚</router-link></li>
+    <li><router-link to="/">愛情</router-link></li>
+    <li><router-link to="/">勵志</router-link></li>
+    <li><router-link to="/">傳記</router-link></li>
+    <li><router-link to="/">童話</router-link></li>
+    <li><router-link to="/">知識</router-link></li>
+    <li><router-link to="/">史實</router-link></li>
     </ul>
     </div>
   </div>
@@ -128,6 +128,9 @@ export default {
     swiper() {
       return this.$refs.mySwiper.$swiper;
     },
+  },
+  methods: {
+    
   },
   mounted() {
     window.scrollTo(0, 0)
@@ -236,9 +239,6 @@ export default {
           background:rgba(0,0,0,.7)
         }
       }
-    }
-    .first_card{
-      
     }
   }
 }
